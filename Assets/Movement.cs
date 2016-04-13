@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-    public float speed = 1f;
+    public float speed = 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -20,15 +20,19 @@ public class Movement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += new Vector3(0.0f, speed * Time.deltaTime, 0.0f);
+            transform.position += new Vector3(0.0f, 0.0f, speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position -= new Vector3(speed * Time.deltaTime, 0.0f, 0.0f);
+            transform.position -= new Vector3(0.0f, 0.0f, speed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position -= new Vector3(speed * Time.deltaTime, 0.0f, 0.0f);
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.position += new Vector3(speed * Time.deltaTime, 0.0f, 0.0f);
         }
 	}
 }
